@@ -32,6 +32,11 @@
   flex-direction: column;
   gap: 32px;
   grid-row-start: 2;
+  text-transform: capitalize;
+}
+
+.title {
+  padding: 30px 0px;
 }
 
 .main ol {
