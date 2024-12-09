@@ -1,4 +1,4 @@
-import classes from "@/components/MAin.module.css";
+import classes from "@/components/Main.module.css";
 import { Links } from "@/components/Links";
 import { Headline }  from "@/components/Headline";
 
