@@ -1,9 +1,9 @@
-import styles from "@/styles/Home.module.css";
+import classes from "@/components/Headline.module.css";
 
 export function Headline(props) {
   return (
     <div>
-      <h1 className={styles.title}>{props.page} page</h1>
+      <h1 className={classes.title}>{props.page} page</h1>
       <ol>
         <li>
           Get started by editing {props.children}.
