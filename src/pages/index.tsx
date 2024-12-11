@@ -4,9 +4,7 @@ import styles from "src/styles/Home.module.css";
 import { Footer } from "src/components/Footer";
 import { Main } from "src/components/Main";
 import { Header } from "src/components/Header";
-import { useEffect } from "react";
-import { useCallback } from "react";
-import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -20,25 +18,18 @@ const geistMono = localFont({
 });
 
 export default function Home() {
-  const foo = 1;
+  const [foo, setFoo] = useState(1);
 
-  const handleClick = useCallback(
-    (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-      console.log(e.currentTarget.href);
-      // e.preventDefault(); // リンク動作を防ぐ
-      alert(foo);
-    },
-    []
-  );
+  const handleClick = () => {
+    setFoo((foo) => foo + 1);
+  };
 
   useEffect(() => {
     //マウント時の処理
-    console.log("マウント時");
     document.body.style.backgroundColor = "lightblue";
 
     return () => {
       //アンマウント時の処理
-      console.log("アンマウント時");
       document.body.style.backgroundColor = "";
     };
   }, []);
@@ -51,9 +42,8 @@ export default function Home() {
         <title>Index Page</title>
       </Head>
       <Header />
-      <Link href="/about" onClick={handleClick}>
-        ボタン
-      </Link>
+      <h1>{foo}</h1>
+      <button onClick={handleClick}>ボタン</button>
 
       <Main page="index" />
       <Footer />
