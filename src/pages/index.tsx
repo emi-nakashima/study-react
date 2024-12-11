@@ -1,9 +1,11 @@
 import Head from "next/head";
 import localFont from "next/font/local";
-import styles from "../styles/Home.module.css";
+import styles from "src/styles/Home.module.css";
 import { Footer } from "src/components/Footer";
 import { Main } from "src/components/Main";
 import { Header } from "src/components/Header";
+import { useCallback } from "react";
+import Link from "next/link";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -17,6 +19,17 @@ const geistMono = localFont({
 });
 
 export default function Home() {
+  const foo = 1;
+
+  const handleClick = useCallback(
+    (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+      console.log(e.currentTarget.href);
+      // e.preventDefault(); // リンク動作を防ぐ
+      alert(foo);
+    },
+    []
+  );
+
   return (
     <div
       className={`${styles.page} ${geistSans.variable} ${geistMono.variable}`}
@@ -25,6 +38,10 @@ export default function Home() {
         <title>Index Page</title>
       </Head>
       <Header />
+      <Link href="/about" onClick={handleClick}>
+        ボタン
+      </Link>
+
       <Main page="index" />
       <Footer />
     </div>
