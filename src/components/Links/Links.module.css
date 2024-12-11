@@ -8,9 +8,6 @@
   border-radius: 128px;
   height: 48px;
   padding: 0 20px;
-  border: none;
-  border: 1px solid transparent;
-  transition: background 0.2s, color 0.2s, border-color 0.2s;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -26,12 +23,15 @@ a.primary {
   gap: 8px;
 }
 
-a.secondary {
+.secondary {
   border-color: var(--gray-alpha-200);
   min-width: 180px;
+  border: none;
+  border: 2px solid #c6c6c6;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
 }
 
-.ctas .secondary:hover {
+.secondary:hover {
   color: #0070f3; /* ホバー時の文字色を青に設定 */
   border-color: #0070f3; /* ホバー時の枠線を青に設定 */
 }

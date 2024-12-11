@@ -1,8 +1,9 @@
 import classes from "src/components/Headline/Headline.module.css";
 
 type HeadlineProps = {
-  page: string; // `page` は文字列型
-  children: React.ReactNode; // `children` は React のノード型
+  // `HeadlineProps` は型定義の名前
+  page: string; // `page` は文字列型のプロパティ
+  children: React.ReactNode; // `children` は React のノード型。要素やテキストを受け取ることができる
 };
 
 export function Headline(props: HeadlineProps) {
