@@ -24,13 +24,13 @@ export default function Home() {
 
   // *** カウントアップの制御 *** //
   const handleClick = useCallback(() => {
-    if (foo < 10) {
-      setFoo((foo) => foo + 1);
+    if (count < 10) {
+      setCount((prevCount) => prevCount + 1);
     }
-  }, [foo]);
+  }, [count]);
 
   const handleDisplay = useCallback(() => {
-    setIsShow((isShow) => !isShow);
+    setIsShow((prevIsShow) => !prevIsShow);
   }, []);
 
   // *** インプットボックスの制御 *** //
