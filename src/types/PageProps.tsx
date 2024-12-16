@@ -1,5 +1,6 @@
 export interface PageProps {
   count: number;
+  doubleCount: number;
   isShow: boolean;
   handleClick: () => void;
   handleDisplay: () => void;
