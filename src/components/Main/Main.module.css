@@ -27,3 +27,13 @@
   border-radius: 4px;
   font-weight: 600;
 }
+
+.itemCount {
+  /* display: inline-block; 白枠を文字列の周りに配置 */
+  padding: 4px 8px; /* 内側の余白を調整 */
+  margin: 8px; /* 外側に余白を追加 */
+  /* border: 2px solid #fff; 白い枠線を設定 */
+  border-radius: 4px; /* 枠線の角を丸める */
+  background-color: #ffffff; /* 背景を白にして見やすくする */
+  font-weight: bold; /* 強調表示 */
+}

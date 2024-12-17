@@ -4,17 +4,18 @@
 }
 
 .ctas a {
-  appearance: none;
-  border-radius: 128px;
-  height: 48px;
-  padding: 0 20px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  line-height: 20px;
-  font-weight: 500;
+  appearance: none; /* デフォルトのブラウザスタイル（特にフォーム要素の見た目）をリセット */
+  border-radius: 128px; /* 要素の角を丸くする。128pxの大きな値を指定しているため、完全に丸みを帯びた形状になる */
+  height: 48px; /* 要素の高さを48pxに設定 */
+  padding: 0 20px; /* 内側の余白を設定。上下は0、左右は20pxの余白を追加 */
+  cursor: pointer; /* カーソルをポインタ（クリック可能な状態）に変更 */
+  display: flex; /* フレックスボックスを使用して子要素を配置 */
+  align-items: center; /* 子要素を垂直方向の中央に揃える */
+  justify-content: center; /* 子要素を水平方向の中央に揃える */
+  font-size: 16px; /* フォントサイズを16pxに設定 */
+  line-height: 20px; /* テキスト行の高さを20pxに設定 */
+  font-weight: 500; /* フォントの太さを500（中程度の太さ）に設定 */
+  background-color: #ffffff; /* 背景を白にして見やすくする */
 }
 
 a.primary {

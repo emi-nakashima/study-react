@@ -1,20 +1,19 @@
 // import Image from "next/image";
 import classes from "src/components/Links/Links.module.css";
 
-const ITEMS = [
-  {
-    id: 1, // ユニークなID
-    href: "https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app",
-    title: "Deploy now",
-  },
-  {
-    id: 2, // ユニークなID
-    href: "https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app",
-    title: "Read our docs",
-  },
-];
+// 型定義
+type LinkItem = {
+  id: number; // 一意のID
+  href: string; // リンク先のURL
+  title: string; // リンクのタイトル
+};
 
-export const Links = () => {
+type LinksProps = {
+  items: LinkItem[]; // リンク項目の配列
+  handleReduce: () => void; // 「減らす」ボタンのクリック時に呼ばれる関数
+};
+
+export const Links: React.FC<LinksProps> = ({ items, handleReduce }) => {
   return (
     <>
       {/* <div className={classes.ctas}>
@@ -40,8 +39,14 @@ export const Links = () => {
         })}
       </div> */}
 
+      {/* ボタン：クリックするとアイテムを減らす */}
+      <div>
+        <button onClick={handleReduce}>減らす</button>
+      </div>
+
+      {/* 配列itemsをマッピングしてリンクを表示 */}
       <div className={classes.ctas}>
-        {ITEMS.map((item) => {
+        {items.map((item) => {
           return (
             <a
               key={item.id} // ユニークなキーを設定
