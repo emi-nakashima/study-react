@@ -20,7 +20,7 @@ interface AppPropsWithExtras extends AppProps {
   };
 }
 
-export default function App({ Component, pageProps }: AppPropsWithExtras) {
+export const App = ({ Component, pageProps }: AppPropsWithExtras) => {
   const counter = useCounter();
   const inputArray = useInputArray();
   useBgColor();
@@ -33,4 +33,6 @@ export default function App({ Component, pageProps }: AppPropsWithExtras) {
       <Component {...pageProps} {...counter} {...inputArray} />
     </>
   );
-}
+};
+
+export default App;

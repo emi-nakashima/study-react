@@ -14,7 +14,7 @@ const ITEMS = [
   },
 ];
 
-export function Links() {
+export const Links = () => {
   return (
     <>
       {/* <div className={classes.ctas}>
@@ -57,4 +57,4 @@ export function Links() {
       </div>
     </>
   );
-}
+};

@@ -17,19 +17,7 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-export default function Home(props: PageProps) {
-  const {
-    count,
-    isShow,
-    handleClick,
-    handleDisplay,
-    text,
-    array,
-    inputRef,
-    handleChange,
-    handleAdd,
-  } = props;
-
+const Home = (props: PageProps) => {
   return (
     <div
       className={`${styles.page} ${geistSans.variable} ${geistMono.variable}`}
@@ -38,14 +26,21 @@ export default function Home(props: PageProps) {
         <title>Index Page</title>
       </Head>
       <Header />
-      {isShow ? <h1>{count}</h1> : null}
-      <button onClick={handleClick}>ボタン</button>
-      <button onClick={handleDisplay}>{isShow ? "非表示" : "表示"}</button>
+      {props.isShow ? <h1>{props.count}</h1> : null}
+      <button onClick={props.handleClick}>ボタン</button>
+      <button onClick={props.handleDisplay}>
+        {props.isShow ? "非表示" : "表示"}
+      </button>
 
-      <input ref={inputRef} type="text" value={text} onChange={handleChange} />
-      <button onClick={handleAdd}>追加</button>
+      <input
+        ref={props.inputRef}
+        type="text"
+        value={props.text}
+        onChange={props.handleChange}
+      />
+      <button onClick={props.handleAdd}>追加</button>
       <ul>
-        {array.map((item) => {
+        {props.array.map((item) => {
           return <li key={item}>{item}</li>;
         })}
       </ul>
@@ -54,4 +49,6 @@ export default function Home(props: PageProps) {
       <Footer />
     </div>
   );
-}
+};
+
+export default Home;

@@ -18,7 +18,7 @@ export const useInputArray = () => {
   // インプットボックスに入力された文字をリストに追加 //
   const handleAdd = useCallback(() => {
     setArray((prevArray) => {
-      if (prevArray.some((item) => item === text)) {
+      if (prevArray.includes(text)) {
         alert("同じ要素が既に存在します。");
         inputRef.current?.select(); // 入力された文字を全選択
         return prevArray;

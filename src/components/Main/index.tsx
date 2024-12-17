@@ -6,7 +6,7 @@ type MainProps = {
   page: string; // `page` は文字列型
 };
 
-export function Main(props: MainProps) {
+export const Main = (props: MainProps) => {
   return (
     <main className={classes.main}>
       <Headline page={props.page}>
@@ -15,4 +15,4 @@ export function Main(props: MainProps) {
       <Links />
     </main>
   );
-}
+};

@@ -6,7 +6,7 @@ type HeadlineProps = {
   children: React.ReactNode; // `children` は React のノード型。要素やテキストを受け取ることができる
 };
 
-export function Headline(props: HeadlineProps) {
+export const Headline = (props: HeadlineProps) => {
   return (
     <div>
       <h1 className={classes.title}>{props.page} page</h1>
@@ -16,4 +16,4 @@ export function Headline(props: HeadlineProps) {
       </ol>
     </div>
   );
-}
+};
